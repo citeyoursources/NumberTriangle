@@ -91,8 +91,9 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        return -1;
 
+        return -1;
+    }
 
     /** Read in the NumberTriangle structure from a file.
      *
