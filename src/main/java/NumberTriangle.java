@@ -1,4 +1,7 @@
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * This is the provided NumberTriangle class to be used in this coding task.
@@ -115,14 +118,39 @@ public class NumberTriangle {
         // will need to return the top of the NumberTriangle,
         // so might want a variable for that.
         NumberTriangle top = null;
+        List<NumberTriangle> prevline = new ArrayList<>();
 
         String line = br.readLine();
         while (line != null) {
 
-            // remove when done; this line is included so running starter code prints the contents of the file
-            System.out.println(line);
 
-            // TODO process the line
+
+            // remove when done; this line is included so running starter code prints the contents of the file
+//            System.out.println(line);
+
+            if (prevline.isEmpty()) {
+               top =  new NumberTriangle(Integer.parseInt(line));
+               prevline.add(top);
+               line = br.readLine();
+//                System.out.println(prevline.get(0).root);
+                continue;
+            }
+
+            List<NumberTriangle> currline = new ArrayList<>();
+            String[] sep = line.split("\s++");
+            for (String sepped : sep) {
+                currline.add(new NumberTriangle(Integer.parseInt(sepped)));
+            }
+
+            for (int i = 0; i <= prevline.size() - 1; i++) {
+                prevline.get(i).left = currline.get(i);
+                prevline.get(i).right = currline.get(i+1);
+            }
+
+            prevline = currline;
+
+
+
 
             //read the next line
             line = br.readLine();
