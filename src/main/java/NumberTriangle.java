@@ -91,7 +91,7 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        // TODO implement this method
+
         return -1;
     }
 
@@ -143,8 +143,8 @@ public class NumberTriangle {
             }
 
             for (int i = 0; i <= prevline.size() - 1; i++) {
-                prevline.get(i).left = currline.get(i);
-                prevline.get(i).right = currline.get(i+1);
+                prevline.get(i).setRight(currline.get(i));
+                prevline.get(i).setLeft(currline.get(i+1));
             }
 
             prevline = currline;
