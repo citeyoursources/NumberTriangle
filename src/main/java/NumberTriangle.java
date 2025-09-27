@@ -1,5 +1,4 @@
 import java.io.*;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -134,7 +133,6 @@ public class NumberTriangle {
         BufferedReader br = new BufferedReader(new InputStreamReader(inputStream));
 
 
-        // TODO define any variables that you want to use to store things
 
         // will need to return the top of the NumberTriangle,
         // so might want a variable for that.
@@ -164,8 +162,8 @@ public class NumberTriangle {
             }
 
             for (int i = 0; i <= prevline.size() - 1; i++) {
-                prevline.get(i).setRight(currline.get(i));
-                prevline.get(i).setLeft(currline.get(i+1));
+                prevline.get(i).setLeft(currline.get(i));
+                prevline.get(i).setRight((currline.get(i+1)));
             }
 
             prevline = currline;
