@@ -91,9 +91,25 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        // TODO implement this method
-        return -1;
-    }
+        if (path.isEmpty()) {
+            return this.getRoot();
+
+        }
+        else {
+            NumberTriangle retrievedroot = this;
+            for (char c : path.toCharArray()) {
+                if (c == 'l'){
+                    retrievedroot = retrievedroot.left;
+                }
+                else {
+                    retrievedroot = retrievedroot.right;
+                }
+            }
+        return retrievedroot.getRoot();
+        }
+
+
+}
 
     /** Read in the NumberTriangle structure from a file.
      *
