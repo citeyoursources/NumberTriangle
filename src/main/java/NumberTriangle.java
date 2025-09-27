@@ -91,11 +91,8 @@ public class NumberTriangle {
      *
      */
     public int retrieve(String path) {
-        if path.isEmpty() {
-            return this.getRoot();
-        }
         return -1;
-    }
+
 
     /** Read in the NumberTriangle structure from a file.
      *
